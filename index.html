@@ -1,67 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartCam</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartCam</title>
+<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-     <header class="topo">
-    <div class="header-container">
-      <p class="logo">Smart<span>Cam</span></p>
+<a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#solucao">Solução</a></li>
-          <li><a href="#publico-alvo">Público-alvo</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#equipe">Nossa Equipe</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#topo" class="logo" aria-label="Logo - página inicial">Smart<strong>Cam</strong></a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+    <label for="nav-toggle" class="nav-toggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <ul class="nav-menu" id="menu-principal">
+        <li><a href="#solucao" class="nav-link is-active">Solução</a></li>
+        <li><a href="#publico-alvo" class="nav-link">Público-alvo</a></li>
+        <li><a href="#galeria" class="nav-link">Galeria</a></li>
+        <li><a href="#equipe" class="nav-link">Nossa Equipe</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo-principal">
+
+  <!-- ===================== SOLUÇÃO ===================== -->
+  <section id="solucao" class="section hero" aria-labelledby="hero-heading">
+    <div class="container hero-grid grid-container">
+
+      <div class="hero-copy grid-item">
+        <h1 id="hero-heading">Sua nova ferramenta favorita<br> para <span class="text-accent">registrar momentos</span></h1>
+        <p class="lead">Tenha qualidade incrível com zero complicação, foco automático e ajuste de luz em tempo real para deixar suas fotos perfeitas em qualquer ambiente.</p>
+        <a href="#publico-alvo" class="btn btn-primary">Ver mais</a>
+      </div>
+
+      <figure class="hero-media grid-item">
+        <img
+          src="./img/principal.png"
+          alt="Lorem ipsum dolor sit amet"
+          width="900" height="640"
+          loading="lazy">
+      </figure>
+
     </div>
-  </header>
-  <main>
 
-   
-    <section id="solucao" class="hero">
-      <div class="hero-content">
-        <h1>Sua nova ferramenta favorita para registrar momentos</h1>
-        <p>
-          Tenha qualidade incrível com zero complicação,
-         foco automático e ajuste de luz em tempo real para
-         deixar suas fotos perfeitas em qualquer ambiente.
-        </p>
-        <a href="#publico-alvo" class="btn">Ver mais</a>
-      </div>
+    <!-- Bloco de apoio — parte da explicação da solução -->
+    <div class="feature-panel">
+      <div class="container feature-grid grid-container">
 
-      <div class="hero-img">
-        <img src="" alt="">
-      </div>
-    </section>
+        <div class="feature-copy grid-item">
+          <span class="badge badge-light">Sobre</span>
+          <h2>Tenha qualidade incrível com <strong>zero complicação</strong></h2>
+          <p class="lead">Uma IA integrada na câmera que te proporciona...</p>
 
-     <section class="sobre">
-      <div class="sobre-container">
-        <div class="sobre-img">
-          <img src="" alt="">
-        </div>
-
-        <div class="sobre-content">
-          <span class="eyebrow">Sobre</span>
-          <h2>Tenha qualidade incrível com zero complicação</h2>
-          <p>
-            Uma IA integrada na câmera que te proporciona...
-          </p>
-
-          <ul class="sobre-lista">
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit sed</li>
-            <li>Eiusmod tempor incididunt ut labore</li>
+          <ul class="feature-list">
+            <li>
+              <span class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4M15 3h4a2 2 0 0 1 2 2v4M9 21H5a2 2 0 0 1-2-2v-4M15 21h4a2 2 0 0 0 2-2v-4"/></svg>
+              </span>
+              <span>Foco automático</span>
+            </li>
+            <li>
+              <span class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+              </span>
+              <span>Ajuste de luz em tempo real</span>
+            </li>
+            <li>
+              <span class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>
+              </span>
+              <span>Transcrição automática de documentos</span>
+            </li>
           </ul>
+
+          <p class="feature-note">Você <strong>não precisa ser um fotográfo profissional para utilizar as câmeras da JOVI</strong> para utilizar as câmeras da JOVI</p>
+          <p class="feature-highlight">Basta ter nosso assistente!</p>
         </div>
+
+        <figure class="feature-media grid-item">
+          <img
+            src="./img/sobre.png"
+            alt="Lorem ipsum dolor sit amet"
+            width="700" height="760"
+            loading="lazy">
+        </figure>
+
       </div>
-    </section>
+    </div>
+  </section>
+
+  <!-- ===================== PÚBLICO-ALVO ===================== -->
+  <section id="publico-alvo" class="section audience" aria-labelledby="audience-heading">
+    <div class="container">
+      <header class="section-header">
+        <span class="badge badge-outline">Público-alvo</span>
+        <h2 id="audience-heading">Ama aproveitar o momento <br> e não focar na recordação</h2>
+        <p class="lead">Para quem quer tirar fotos incríveis sem precisar entender de fotografia.</p>
+      </header>
+
+      <div class="audience-grid grid-container">
+        <figure class="audience-media grid-item">
+          <img
+            src="./img/publico_alvo.png"
+            alt="Lorem ipsum dolor sit amet"
+            width="600" height="760"
+            loading="lazy">
+        </figure>
+
+        <ul class="audience-cards grid-item">
+          <li class="audience-card">
+            <span class="card-icon icon-blue" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </span>
+            <h3>Amantes de momentos</h3>
+            <p>Pessoas que gostam de registrar encontros, festas e situações inesperadas, sem precisar parar tudo para configurar a câmera.</p>
+          </li>
+          <li class="audience-card">
+            <span class="card-icon icon-peach" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM1 20l6-9 4 5 3-4 7 8"/></svg>
+            </span>
+            <h3>Viagens</h3>
+            <p>Para quem quer guardar paisagens, lugares e experiências com qualidade, mesmo em condições diferentes de luz.</p>
+          </li>
+          <li class="audience-card">
+            <span class="card-icon icon-pink" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>
+            </span>
+            <h3>Família e amigos</h3>
+            <p>Para quem ama registrar pessoas importantes sem precisar pedir várias vezes para repetir a foto.</p>
+          </li>
+          <li class="audience-card">
+            <span class="card-icon icon-green" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </span>
+            <h3>Praticidade</h3>
+            <p>Para quem prefere apontar, clicar e confiar que a IA fará os ajustes necessários..</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERIA ===================== -->
+  <section id="galeria" class="section gallery" aria-labelledby="gallery-heading">
+    <div class="container">
+      <header class="section-header section-header-left">
+        <span class="badge badge-outline">Galeria</span>
+        <h2 id="gallery-heading">Inteligência da câmera em ação</h2>
+        <p class="lead">Identificação visual em tempo real para entregar a melhor versão da sua foto.</p>
+      </header>
+
+      <div class="gallery-grid grid-container">
+
+        <article class="gallery-card grid-item">
+          <figure class="phone-mockup">
+            <img
+              src="./img/galeria1.png"
+              alt="Lorem ipsum dolor sit amet"
+              width="380" height="700"
+              loading="lazy">
+          </figure>
+          <p> A câmera reconhece a paisagem com pouca iluminação e sugere ativar o modo otimizado para destacar as cores, a água e os detalhes da vegetação sem escurecer a foto.</p>
+        </article>
+
+        <article class="gallery-card grid-item">
+          <figure class="phone-mockup">
+            <img
+              src="./img/galeria2.png"
+              alt="Lorem ipsum dolor sit amet"
+              width="380" height="700"
+              loading="lazy">
+          </figure>
+          <p>O visor ajusta as guias de enquadramento ao redor do documento para capturar apenas a área importante, corrigindo a perspectiva e garantindo leitura clara.</p>
+        </article>
+
+        <article class="gallery-card grid-item">
+          <figure class="phone-mockup">
+            <img
+              src="./img/galeria3.png"
+              alt="Lorem ipsum dolor sit amet"
+              width="380" height="700"
+              loading="lazy">
+          </figure>
+          <p> A IA escaneia e destaca os blocos de texto presentes na imagem, permitindo selecionar, copiar ou traduzir o conteúdo com um simples toque na tela.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NOSSA EQUIPE ===================== -->
+  <section id="equipe" class="section team" aria-labelledby="team-heading">
+    <div class="container">
+      <header class="section-header section-header-right">
+        <span class="badge badge-outline badge-on-dark">Nossa Equipe</span>
+        <h2 id="team-heading" class="sr-only">Nossa Equipe</h2>
+      </header>
+
+      <ul class="team-grid grid-container">
+        <li class="team-card grid-item">
+          <img class="team-avatar"
+            src="./img/Bianca.png"
+            alt="Lorem ipsum"
+            width="160" height="160"
+            loading="lazy">
+          <h3>Bianca Vitória Veloso</h3>
+          <p>Web development</p>
+        </li>
+        <li class="team-card grid-item">
+          <img class="team-avatar"
+            src="images/equipe-02.png"
+            alt="Lorem ipsum"
+            width="160" height="160"
+            loading="lazy">
+          <h3>Gabriella Viana Lisboa</h3>
+          <p>Front-end Design</p>
+        </li>
+        <li class="team-card grid-item">
+          <img class="team-avatar"
+            src="images/equipe-03.png"
+            alt="Lorem ipsum"
+            width="160" height="160"
+            loading="lazy">
+          <h3>Maria Gabriela G Dantas</h3>
+          <p>Front-end Design</p>
+        </li>
+        <li class="team-card grid-item">
+          <img class="team-avatar"
+            src="images/equipe-04.png"
+            alt="Lorem ipsum"
+            width="160" height="160"
+            loading="lazy">
+          <h3>VIcente de Souza Stramantino</h3>
+          <p>Web development</p>
+        </li>
+        <li class="team-card grid-item">
+          <img class="team-avatar"
+            src="images/equipe-05.png"
+            alt="Lorem ipsum"
+            width="160" height="160"
+            loading="lazy">
+          <h3>Felipe Cardozo</h3>
+          <p>Front-end Design</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section id="contato" class="section contact" aria-labelledby="contact-heading">
+    <div class="container contact-grid grid-container">
+
+      <div class="contact-form-wrapper grid-item">
+        <h2 id="contact-heading" class="sr-only">Entre em contato para saber mais!</h2>
+        
+        <form class="contact-form" action="#" method="get">
+          <div class="form-field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+          </div>
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+          </div>
+          <div class="form-field">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+
+      <figure class="contact-media grid-item">
+        <img
+          src="./img/contato.png"
+          alt="Lorem ipsum dolor sit amet"
+          width="600" height="640"
+          loading="lazy">
+      </figure>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid grid-container">
+
+    <div class="footer-brand grid-item">
+      <p class="logo logo-on-dark">Smart<strong>Cam</strong></p>
+      <p class="footer-feat">Feat <span class="footer-jovi">JOVI</span></p>
+    </div>
+
+    <nav class="footer-nav grid-item" aria-label="Equipe no rodapé">
+      <h3>Equipe</h3>
+      <ul>
+        <li>Bianca Vitória Veloso</li>
+        <li>Gabriella Viana Lisboa</li>
+        <li>Maria Gabriela G Dantas</li>
+        <li>VIcente de Souza Stramantino</li>
+        <li>Felipe Cardozo</li>
+      </ul>
+    </nav>
+
+    <nav class="footer-nav grid-item" aria-label="Acesso rápido no rodapé">
+      <h3>Acesso rápido</h3>
+      <ul>
+        <li><a href="#solucao">Solução</a></li>
+        <li><a href="#publico-alvo">Público-alvo</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</footer>
 
 </body>
 </html>
