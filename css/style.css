@@ -1,4 +1,3 @@
-
 :root {
   /* Cores */
   --color-primary: #0145EB;
@@ -55,6 +54,7 @@ h3 { font-size: 18px; font-weight: 600; }
 p { margin: 0 0 16px; color: var(--color-text-muted); }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
+figure { margin: 0; } /* navegadores dão margem padrão ao <figure>, o que empurrava as imagens pra fora do alinhamento */
 ul { list-style: none; margin: 0; padding: 0; }
 button { font-family: inherit; cursor: pointer; }
 
@@ -154,13 +154,6 @@ button { font-family: inherit; cursor: pointer; }
 }
 .grid-item { min-width: 0; }
 
-img {
-  background-color: #EEF2FE;
-  color: #5468D4;
-  font-size: 13px;
-  font-family: var(--font-body);
-}
-
 /* =========================================================
    HEADER
    ========================================================= */
@@ -239,13 +232,25 @@ img {
 .hero { padding-top: 72px; padding-bottom: 0; }
 .hero-grid {
   grid-template-columns: 1fr;
-  text-align: left; 
   justify-items: center;
   text-align: center;
   gap: 32px;
 }
 .hero-copy { max-width: 620px; }
-.hero-media { width: 100%; max-width: 720px; margin-top: 16px; }
+
+/* Imagem principal reduzida para 600x600 e sempre centralizada */
+.hero-media {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+  margin-top: 16px;
+  margin-inline: auto; /* garante centralização mesmo se o pai virar largo */
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* troque para "cover" se preferir que a imagem preencha o quadrado 600x600 cortando as bordas */
+}
 
 .feature-panel {
   background: var(--color-primary-dark);
@@ -290,10 +295,12 @@ img {
   color: var(--color-white);
   margin-bottom: 0;
 }
-.feature-media { align-self: end; }
+.feature-media {
+  align-self: end;
+  margin-right: -24px; /* cancela o padding do .container: imagem encosta na borda direita, como na referência */
+}
 .feature-media img {
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  mix-blend-mode: multiply;
 }
 
 /* =========================================================
@@ -343,24 +350,19 @@ img {
   grid-template-columns: repeat(3, 1fr);
 }
 .gallery-card p { font-size: 15px; margin-top: 20px; }
+
+/* Moldura removida: sem borda nem fundo branco, e aspect-ratio batendo
+   com o tamanho real das imagens (380x700) pra não cortar nem sobrar espaço */
 .phone-mockup {
-  border: 2px solid var(--color-primary);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 9 / 16;
-  background: var(--color-white);
-}
-.phone-mockup {
-  border: 2px solid var(--color-primary);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 9 / 16;
-  background: var(--color-white);
+  aspect-ratio: 9 / 16; /* proporção aproximada, só define a altura do card */
 }
 .phone-mockup img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* mostra a imagem inteira, sem cortar, seja qual for a proporção real do arquivo */
+  object-position: left top; /* encosta a imagem na borda esquerda, alinhando com o texto abaixo */
 }
 
 /* =========================================================
@@ -392,7 +394,7 @@ img {
    ========================================================= */
 .contact-grid {
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: start; /* alinha o topo da imagem com o topo da caixa de texto */
 }
 .contact-form-wrapper {
   border: 1.5px solid var(--color-border);
@@ -426,7 +428,18 @@ img {
   color: var(--color-primary-dark);
   font-weight: 600;
 }
-.contact-media img { border-radius: var(--radius-lg); }
+.contact-media {
+  max-width: 650px;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+.contact-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+}
+
 
 /* =========================================================
    FOOTER
@@ -453,8 +466,6 @@ img {
    RESPONSIVIDADE — TABLET (≥ 640px)
    ========================================================= */
 @media (min-width: 640px) {
-  .hero-grid { text-align: left; justify-items: start; }
-  .hero-copy { text-align: left; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
@@ -474,9 +485,6 @@ img {
    ========================================================= */
 @media (min-width: 1024px) {
   .nav-toggle { display: none; }
-
-  .hero-grid { grid-template-columns: 1fr 1fr; text-align: left; }
-  .hero-copy { text-align: left; }
 
   .feature-grid { grid-template-columns: 1fr 0.9fr; }
   .feature-media { align-self: stretch; }
