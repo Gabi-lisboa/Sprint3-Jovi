@@ -8,46 +8,51 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+<link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 
-<a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+<a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header">
-  <div class="container header-inner">
+<header class="cabecalho">
+  <div class="container cabecalho-linha">
     <a href="#topo" class="logo" aria-label="Logo - página inicial">Smart<strong>Cam</strong></a>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
-    <label for="nav-toggle" class="nav-toggle" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
+    <input type="checkbox" id="abrir-menu" class="check-menu">
+    <label for="abrir-menu" class="botao-menu" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </label>
 
-    <nav class="site-nav" aria-label="Navegação principal">
-      <ul class="nav-menu" id="menu-principal">
-        <li><a href="#solucao" class="nav-link is-active">Solução</a></li>
-        <li><a href="#publico-alvo" class="nav-link">Público-alvo</a></li>
-        <li><a href="#galeria" class="nav-link">Galeria</a></li>
-        <li><a href="#equipe" class="nav-link">Nossa Equipe</a></li>
-        <li><a href="#contato" class="nav-link">Contato</a></li>
+    <nav class="menu" aria-label="Navegação principal">
+      <ul class="lista-menu" id="menu-principal">
+        <li><a href="#solucao" class="link-menu ativo">Solução</a></li>
+        <li><a href="#publico" class="link-menu">Público-alvo</a></li>
+        <li><a href="#galeria" class="link-menu">Galeria</a></li>
+        <li><a href="#equipe" class="link-menu">Nossa Equipe</a></li>
+        <li><a href="#contato" class="link-menu">Contato</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main id="conteudo-principal">
+<main id="conteudo">
 
-  <!-- ===================== SOLUÇÃO ===================== -->
-  <section id="solucao" class="section hero" aria-labelledby="hero-heading">
-    <div class="container hero-grid grid-container">
+  <section id="solucao" class="secao topo" aria-labelledby="titulo-topo">
+    <div class="container grid-topo grid">
 
-      <div class="hero-copy grid-item">
-        <h1 id="hero-heading">Sua nova ferramenta favorita<br> para <span class="text-accent">registrar momentos</span></h1>
-        <p class="lead">Tenha qualidade incrível com zero complicação, foco automático e ajuste de luz em tempo real para deixar suas fotos perfeitas em qualquer ambiente.</p>
-        <a href="#publico-alvo" class="btn btn-primary">Ver mais</a>
+      <div class="texto-topo item">
+        <h1 id="titulo-topo">Sua nova ferramenta favorita<br> para <span class="destaque">registrar momentos</span></h1>
+        <p class="subtitulo">Tenha qualidade incrível com zero complicação, foco automático e ajuste de luz em tempo real para deixar suas fotos perfeitas em qualquer ambiente.</p>
+        <a href="#publico" class="botao botao-azul">Ver mais</a>
       </div>
 
-      <figure class="hero-media grid-item">
+      <figure class="imagem-topo item">
         <img
           src="./img/principal.png"
           alt="Imagem de um dos celulares da Jovi"
@@ -57,41 +62,34 @@
 
     </div>
 
-    <!-- Bloco de apoio — parte da explicação da solução -->
-    <div class="feature-panel">
-      <div class="container feature-grid grid-container">
+    <div class="caixa-sobre">
+      <div class="container grid-sobre grid">
 
-        <div class="feature-copy grid-item">
-          <span class="badge badge-light">Sobre</span>
+        <div class="texto-sobre item">
+          <span class="etiqueta etiqueta-clara">Sobre</span>
           <h2>Tenha qualidade incrível com <strong>zero complicação</strong></h2>
-          <p class="lead">Uma IA integrada na câmera que te proporciona...</p>
+          <p class="subtitulo">Uma IA integrada na câmera que te proporciona...</p>
 
-          <ul class="feature-list">
+          <ul class="lista-recursos">
             <li>
-              <span class="feature-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4M15 3h4a2 2 0 0 1 2 2v4M9 21H5a2 2 0 0 1-2-2v-4M15 21h4a2 2 0 0 0 2-2v-4"/></svg>
-              </span>
+              <span class="icone-recurso" aria-hidden="true"><i class="bx bx-capture"></i></span>
               <span>Foco automático</span>
             </li>
             <li>
-              <span class="feature-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
-              </span>
+              <span class="icone-recurso" aria-hidden="true"><i class="bx bx-sun"></i></span>
               <span>Ajuste de luz em tempo real</span>
             </li>
             <li>
-              <span class="feature-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>
-              </span>
+              <span class="icone-recurso" aria-hidden="true"><i class="bx bx-file"></i></span>
               <span>Transcrição automática de documentos</span>
             </li>
           </ul>
 
-          <p class="feature-note">Você <strong>não precisa ser um fotográfo profissional </strong> para utilizar as câmeras da JOVI </p>
-          <p class="feature-highlight">Basta ter nosso assistente!</p>
+          <p class="nota-sobre">Você <strong>não precisa ser um fotográfo profissional </strong> para utilizar as câmeras da JOVI </p>
+          <p class="destaque-sobre">Basta ter nosso assistente!</p>
         </div>
 
-        <figure class="feature-media grid-item">
+        <figure class="imagem-sobre item">
           <img
             src="./img/Sobre.png"
             alt="Imagem de um dos celulares da Jovi"
@@ -103,17 +101,16 @@
     </div>
   </section>
 
-  <!-- ===================== PÚBLICO-ALVO ===================== -->
-  <section id="publico-alvo" class="section audience" aria-labelledby="audience-heading">
+  <section id="publico" class="secao publico" aria-labelledby="titulo-publico">
     <div class="container">
-      <header class="section-header">
-        <span class="badge badge-outline">Público-alvo</span>
-        <h2 id="audience-heading">Ama aproveitar o momento <br> e não focar na recordação</h2>
-        <p class="lead">Para quem quer tirar fotos incríveis sem precisar entender de fotografia.</p>
+      <header class="titulo-secao">
+        <span class="etiqueta etiqueta-contorno">Público-alvo</span>
+        <h2 id="titulo-publico">Ama aproveitar o momento <br> e não focar na recordação</h2>
+        <p class="subtitulo">Para quem quer tirar fotos incríveis sem precisar entender de fotografia.</p>
       </header>
 
-      <div class="audience-grid grid-container">
-        <figure class="audience-media grid-item">
+      <div class="grid-publico grid">
+        <figure class="imagem-publico item">
           <img
             src="./img/publico_alvo.png"
             alt="Imagem de uma mulher tirando uma foto com a câmera da Jovi"
@@ -121,32 +118,24 @@
             loading="lazy">
         </figure>
 
-        <ul class="audience-cards grid-item">
-          <li class="audience-card">
-            <span class="card-icon icon-blue" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            </span>
+        <ul class="lista-cards item">
+          <li class="card">
+            <span class="icone-card icone-azul" aria-hidden="true"><i class="bx bx-heart"></i></span>
             <h3>Amantes de momentos</h3>
             <p>Pessoas que gostam de registrar encontros, festas e situações inesperadas, sem precisar parar tudo para configurar a câmera.</p>
           </li>
-          <li class="audience-card">
-            <span class="card-icon icon-peach" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM1 20l6-9 4 5 3-4 7 8"/></svg>
-            </span>
+          <li class="card">
+            <span class="icone-card icone-laranja" aria-hidden="true"><i class="bx bx-map"></i></span>
             <h3>Viagens</h3>
             <p>Para quem quer guardar paisagens, lugares e experiências com qualidade, mesmo em condições diferentes de luz.</p>
           </li>
-          <li class="audience-card">
-            <span class="card-icon icon-pink" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>
-            </span>
+          <li class="card">
+            <span class="icone-card icone-rosa" aria-hidden="true"><i class="bx bx-group"></i></span>
             <h3>Família e amigos</h3>
             <p>Para quem ama registrar pessoas importantes sem precisar pedir várias vezes para repetir a foto.</p>
           </li>
-          <li class="audience-card">
-            <span class="card-icon icon-green" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            </span>
+          <li class="card">
+            <span class="icone-card icone-verde" aria-hidden="true"><i class="bx bx-check-circle"></i></span>
             <h3>Praticidade</h3>
             <p>Para quem prefere apontar, clicar e confiar que a IA fará os ajustes necessários..</p>
           </li>
@@ -155,19 +144,18 @@
     </div>
   </section>
 
-  <!-- ===================== GALERIA ===================== -->
-  <section id="galeria" class="section gallery" aria-labelledby="gallery-heading">
+  <section id="galeria" class="secao galeria" aria-labelledby="titulo-galeria">
     <div class="container">
-      <header class="section-header section-header-left">
-        <span class="badge badge-outline">Galeria</span>
-        <h2 id="gallery-heading">Inteligência da câmera em ação</h2>
-        <p class="lead">Identificação visual em tempo real para entregar a melhor versão da sua foto.</p>
+      <header class="titulo-secao titulo-esquerda">
+        <span class="etiqueta etiqueta-contorno">Galeria</span>
+        <h2 id="titulo-galeria">Inteligência da câmera em ação</h2>
+        <p class="subtitulo">Identificação visual em tempo real para entregar a melhor versão da sua foto.</p>
       </header>
 
-      <div class="gallery-grid grid-container">
+      <div class="grid-galeria grid">
 
-        <article class="gallery-card grid-item">
-          <figure class="phone-mockup">
+        <article class="card-galeria item">
+          <figure class="celular">
             <img
               src="./img/galeria1.png"
               alt="Imagem das funcionalidade da SmartCam"
@@ -177,8 +165,8 @@
           <p> A câmera reconhece a paisagem com pouca iluminação e sugere ativar o modo otimizado para destacar as cores, a água e os detalhes da vegetação sem escurecer a foto.</p>
         </article>
 
-        <article class="gallery-card grid-item">
-          <figure class="phone-mockup">
+        <article class="card-galeria item">
+          <figure class="celular">
             <img
               src="./img/galeria2.png"
               alt="Imagem de um documento sendo capturado"
@@ -188,8 +176,8 @@
           <p>O visor ajusta as guias de enquadramento ao redor do documento para capturar apenas a área importante, corrigindo a perspectiva e garantindo leitura clara.</p>
         </article>
 
-        <article class="gallery-card grid-item">
-          <figure class="phone-mockup">
+        <article class="card-galeria item">
+          <figure class="celular">
             <img
               src="./img/galeria3.png"
               alt="Imagem de IA de escaneamento de texto em ação"
@@ -203,17 +191,16 @@
     </div>
   </section>
 
-  <!-- ===================== NOSSA EQUIPE ===================== -->
-  <section id="equipe" class="section team" aria-labelledby="team-heading">
+  <section id="equipe" class="secao equipe" aria-labelledby="titulo-equipe">
     <div class="container">
-      <header class="section-header section-header-right">
-        <span class="badge badge-outline badge-on-dark">Nossa Equipe</span>
-        <h2 id="team-heading" class="sr-only">Nossa Equipe</h2>
+      <header class="titulo-secao titulo-direita">
+        <span class="etiqueta etiqueta-contorno etiqueta-escura">Nossa Equipe</span>
+        <h2 id="titulo-equipe" class="somente-leitor">Nossa Equipe</h2>
       </header>
 
-      <ul class="team-grid grid-container">
-        <li class="team-card grid-item">
-          <img class="team-avatar"
+      <ul class="grid-equipe grid">
+        <li class="card-equipe item">
+          <img class="foto-equipe"
             src="./img/Bianca.png"
             alt="Integrante da equipe Bianca Vitória Veloso"
             width="160" height="160"
@@ -221,8 +208,8 @@
           <h3>Bianca Vitória Veloso</h3>
           <p>Web development</p>
         </li>
-        <li class="team-card grid-item">
-          <img class="team-avatar"
+        <li class="card-equipe item">
+          <img class="foto-equipe"
             src="./img/Gabi.png"
             alt="Integrante da equipe Gabriella Viana Lisboa"
             width="160" height="160"
@@ -230,8 +217,8 @@
           <h3>Gabriella Viana Lisboa</h3>
           <p>Front-end Design</p>
         </li>
-        <li class="team-card grid-item">
-          <img class="team-avatar"
+        <li class="card-equipe item">
+          <img class="foto-equipe"
             src="./img/Maga.png"
             alt="Integrante da equipe Maria Gabriela G Dantas"
             width="160" height="160"
@@ -239,8 +226,8 @@
           <h3>Maria Gabriela G Dantas</h3>
           <p>Front-end Design</p>
         </li>
-        <li class="team-card grid-item">
-          <img class="team-avatar"
+        <li class="card-equipe item">
+          <img class="foto-equipe"
             src="./img/Vicente.png"
             alt="Integrante da equipe Vincente de Souza Stramantino"
             width="160" height="160"
@@ -248,8 +235,8 @@
           <h3>VIcente de Souza Stramantino</h3>
           <p>Web development</p>
         </li>
-        <li class="team-card grid-item">
-          <img class="team-avatar"
+        <li class="card-equipe item">
+          <img class="foto-equipe"
             src="./img/Felipe.png"
             alt="Integrante da equipe Felipe Cardozo"
             width="160" height="160"
@@ -261,31 +248,30 @@
     </div>
   </section>
 
-  <!-- ===================== CONTATO ===================== -->
-  <section id="contato" class="section contact" aria-labelledby="contact-heading">
-    <div class="container contact-grid grid-container">
+  <section id="contato" class="secao contato" aria-labelledby="titulo-contato">
+    <div class="container grid-contato grid">
 
-      <div class="contact-form-wrapper grid-item">
-        <h2 id="contact-heading" class="sr-only">Entre em contato para saber mais!</h2>
-        
-        <form class="contact-form" action="#" method="get">
-          <div class="form-field">
+      <div class="caixa-formulario item">
+        <h2 id="titulo-contato" class="somente-leitor">Entre em contato para saber mais!</h2>
+
+        <form class="formulario" action="#" method="get">
+          <div class="campo">
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
           </div>
-          <div class="form-field">
+          <div class="campo">
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
           </div>
-          <div class="form-field">
+          <div class="campo">
             <label for="telefone">Telefone</label>
             <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
           </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="botao botao-azul">Enviar</button>
         </form>
       </div>
 
-      <figure class="contact-media grid-item">
+      <figure class="imagem-contato item">
         <img
           src="./img/contato.png"
           alt="Imagem de contato com a equipe da Jovi"
@@ -298,15 +284,15 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid grid-container">
+<footer class="rodape">
+  <div class="container grid-rodape grid">
 
-    <div class="footer-brand grid-item">
-      <p class="logo logo-on-dark">Smart<strong>Cam</strong></p>
-      <p class="footer-feat">Feat <span class="footer-jovi">JOVI</span></p>
+    <div class="marca-rodape item">
+      <p class="logo logo-clara">Smart<strong>Cam</strong></p>
+      <p class="texto-feat">Feat <span class="nome-jovi">JOVI</span></p>
     </div>
 
-    <nav class="footer-nav grid-item" aria-label="Equipe no rodapé">
+    <nav class="menu-rodape item" aria-label="Equipe no rodapé">
       <h3>Equipe</h3>
       <ul>
         <li>Bianca Vitória Veloso</li>
@@ -317,11 +303,11 @@
       </ul>
     </nav>
 
-    <nav class="footer-nav grid-item" aria-label="Acesso rápido no rodapé">
+    <nav class="menu-rodape item" aria-label="Acesso rápido no rodapé">
       <h3>Acesso rápido</h3>
       <ul>
         <li><a href="#solucao">Solução</a></li>
-        <li><a href="#publico-alvo">Público-alvo</a></li>
+        <li><a href="#publico">Público-alvo</a></li>
         <li><a href="#galeria">Galeria</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
