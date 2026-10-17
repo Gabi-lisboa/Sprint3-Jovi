@@ -37,7 +37,7 @@ export default function Home() {
       <section id="solucao" className="secao topo" aria-labelledby="titulo-topo">
         <div className="container grid-topo grid">
           <div className="texto-topo item">
-            <h1 id="titulo-topo">Sua nova ferramenta favorita<br /> para <span className="destaque">registrar momentos</span></h1>
+            <h1 id="titulo-topo" className="leading-tight">Sua nova ferramenta favorita<br /> para <span className="destaque">registrar momentos</span></h1>
             <p className="subtitulo">Tenha qualidade incrível com zero complicação, foco automático e ajuste de luz em tempo real para deixar suas fotos perfeitas em qualquer ambiente.</p>
             <a href="#publico" className="botao botao-azul">Ver mais</a>
           </div>
@@ -95,7 +95,7 @@ export default function Home() {
               <div className="campo"><label htmlFor="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Digite seu nome" required /></div>
               <div className="campo"><label htmlFor="email">E-mail</label><input type="email" id="email" name="email" placeholder="Digite seu e-mail" required /></div>
               <div className="campo"><label htmlFor="telefone">Telefone</label><input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" /></div>
-              <button type="submit" className="botao botao-azul">Enviar</button>
+              <button type="submit" className="botao botao-azul font-semibold transition-colors duration-200">Enviar</button>
               {enviado && <p className="mensagem-formulario" role="status">Mensagem enviada com sucesso!</p>}
             </form>
           </div>

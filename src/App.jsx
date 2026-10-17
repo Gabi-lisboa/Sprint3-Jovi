@@ -4,7 +4,7 @@ import Home from './pages/Home'
 
 export default function App() {
   return (
-    <div className="app">
+    <div className="app min-h-screen flex flex-col">
       <Header />
       <Home />
       <Footer />

@@ -24,7 +24,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="botao-menu"
+          className="botao-menu transition-colors duration-200"
           aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={menuAberto}
           onClick={() => setMenuAberto((aberto) => !aberto)}
@@ -40,7 +40,7 @@ export default function Header() {
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  className={`link-menu ${index === 0 ? 'ativo' : ''}`}
+                  className={`link-menu font-semibold transition-colors duration-200 ${index === 0 ? 'ativo' : ''}`}
                   onClick={fecharMenu}
                 >
                   {nome}
