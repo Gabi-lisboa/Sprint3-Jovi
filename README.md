@@ -43,12 +43,6 @@ Para gerar a versão de produção:
 npm run build
 ```
 
-Para visualizar a versão de produção localmente:
-
-```bash
-npm run preview
-```
-
 ## Back-end
 
 Este projeto é uma landing page front-end e não possui back-end ou servidor de API próprio. Portanto, não há comandos adicionais para executar servidores back-end.
