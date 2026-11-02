@@ -46,10 +46,11 @@ npm run build
 
 ## Back-end
 
-A gente não tem back-end próprio, então usamos uma API mockada e uma API pública. Não precisa rodar nada além do `npm run dev`.
+A gente não tem back-end próprio, então usamos uma API mockada e duas APIs públicas. Não precisa rodar nada além do `npm run dev`.
 
-- API mockada: os arquivos JSON da pasta `public/api`. O `usuarios.json` é usado no login e o `fotos.json` mostra as fotos no painel.
-- API pública: o [JSONPlaceholder](https://jsonplaceholder.typicode.com/), que recebe o POST do formulário de contato.
+- API mockada: o `public/api/usuarios.json`, que é usado no login.
+- [Picsum Photos](https://picsum.photos/): API pública que traz as fotos do painel.
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/): API pública que recebe o POST do formulário de contato.
 
 As chamadas ficam todas no `src/services/api.js`. Se a API não responder, a tela mostra uma mensagem de erro.
 

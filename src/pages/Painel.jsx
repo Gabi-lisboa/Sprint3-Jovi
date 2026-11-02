@@ -36,10 +36,10 @@ export default function Painel() {
           {fotos.map((foto) => (
             <li className="card-galeria item" key={foto.id}>
               <figure className="celular">
-                <img src={foto.imagem} alt={foto.titulo} width="380" height="700" />
+                <img src={`https://picsum.photos/id/${foto.id}/380/700`} alt={`Foto de ${foto.author}`} width="380" height="700" />
               </figure>
-              <h3 className="titulo-foto">{foto.titulo}</h3>
-              <p>Modo: {foto.modo} - {new Date(foto.data + 'T00:00:00').toLocaleDateString('pt-BR')}</p>
+              <h3 className="titulo-foto">Foto {foto.id}</h3>
+              <p>Autor: {foto.author}</p>
             </li>
           ))}
         </ul>

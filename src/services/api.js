@@ -9,7 +9,7 @@ export async function buscarUsuarios() {
 }
 
 export async function buscarFotos() {
-  const resposta = await fetch('/api/fotos.json')
+  const resposta = await fetch('https://picsum.photos/v2/list?page=3&limit=6')
 
   if (!resposta.ok) {
     throw new Error('Erro ao buscar fotos')
