@@ -5,6 +5,9 @@
 
 .app { min-height: 100vh; }
 .mensagem-formulario { margin-top: 16px; color: #d7f9db; font-weight: 600; }
+.mensagem-erro { color: #d93025; font-weight: 600; }
+.caixa-login { max-width: 460px; margin-inline: auto; }
+.botao-sair { background: transparent; border: none; width: 100%; }
 
 @media (max-width: 1023px) {
   .menu-aberto .lista-menu { display: flex; }

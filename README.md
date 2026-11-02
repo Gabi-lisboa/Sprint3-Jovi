@@ -5,6 +5,7 @@ Landing page da SmartCam, uma solução de câmera inteligente com recursos de i
 ## Tecnologias utilizadas
 
 - React 19
+- React Router
 - Vite
 - Tailwind CSS (utilizado de forma incremental na estilização)
 - JavaScript
@@ -53,9 +54,24 @@ O formulário de contato possui validação no navegador e demonstra o envio da 
 
 Durante o desenvolvimento, utilizamos ferramentas de inteligência artificial generativa como apoio técnico para transformar a página HTML inicial em uma aplicação React com Vite, organizar a estrutura de componentes, revisar a responsividade e sugerir melhorias de acessibilidade, semântica e organização do código. A IA também auxiliou na identificação de ajustes necessários no menu responsivo, na integração do Tailwind CSS e na configuração do projeto. Todas as sugestões foram revisadas, adaptadas e testadas pela equipe antes de serem incorporadas ao projeto; a concepção visual, o conteúdo e as decisões finais da aplicação são responsabilidade da equipe.
 
-## Usuários e senhas para teste
+## Login e rotas
 
-O projeto não possui autenticação. Portanto, não são necessários usuários ou senhas para acessar a aplicação.
+A página inicial (`/`) e o login (`/login`) são públicas. O `/painel` é privado, então só abre se a pessoa estiver logada. Se tentar entrar direto no painel sem login, ela volta pro login.
+
+Qualquer outro endereço cai numa página de "não encontrada".
+
+Pra testar o login:
+
+- E-mail: teste@smartcam.com
+- Senha: 123456
+
+O que testamos:
+
+- Entrar no `/painel` sem login manda pro `/login`
+- Login com campo vazio, e-mail sem @, senha curta ou senha errada mostra o erro
+- Login certo leva pro `/painel`
+- Entrar no `/login` já logado leva pro `/painel`
+- O botão Sair tira o login e volta pro `/login`
 
 ## Deploy
 
