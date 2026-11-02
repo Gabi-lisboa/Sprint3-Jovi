@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import SectionTitle from '../components/SectionTitle'
+import { enviarContato } from '../services/api'
 
 const publico = [
   ['icone-azul', 'bx-heart', 'Amantes de momentos', 'Pessoas que gostam de registrar encontros, festas e situações inesperadas, sem precisar parar tudo para configurar a câmera.'],
@@ -24,10 +25,30 @@ const equipe = [
 
 export default function Home() {
   const [enviado, setEnviado] = useState(false)
+  const [enviando, setEnviando] = useState(false)
+  const [erroEnvio, setErroEnvio] = useState('')
 
-  function enviarFormulario(evento) {
+  async function enviarFormulario(evento) {
     evento.preventDefault()
-    setEnviado(true)
+    const form = evento.target
+
+    setEnviado(false)
+    setErroEnvio('')
+    setEnviando(true)
+
+    try {
+      await enviarContato({
+        nome: form.nome.value,
+        email: form.email.value,
+        telefone: form.telefone.value,
+      })
+      setEnviado(true)
+      form.reset()
+    } catch {
+      setErroEnvio('Erro ao enviar a mensagem. Tente novamente.')
+    } finally {
+      setEnviando(false)
+    }
   }
 
   return (
@@ -95,8 +116,9 @@ export default function Home() {
               <div className="campo"><label htmlFor="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Digite seu nome" required /></div>
               <div className="campo"><label htmlFor="email">E-mail</label><input type="email" id="email" name="email" placeholder="Digite seu e-mail" required /></div>
               <div className="campo"><label htmlFor="telefone">Telefone</label><input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" /></div>
-              <button type="submit" className="botao botao-azul font-semibold transition-colors duration-200">Enviar</button>
+              <button type="submit" className="botao botao-azul font-semibold transition-colors duration-200" disabled={enviando}>{enviando ? 'Enviando...' : 'Enviar'}</button>
               {enviado && <p className="mensagem-formulario" role="status">Mensagem enviada com sucesso!</p>}
+              {erroEnvio && <p className="mensagem-erro" role="alert">{erroEnvio}</p>}
             </form>
           </div>
           <figure className="imagem-contato item"><img src="/img/contato.png" alt="Imagem de contato com a equipe da Jovi" width="600" height="640" /></figure>

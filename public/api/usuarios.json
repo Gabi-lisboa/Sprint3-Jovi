@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nome": "Usuário Teste",
+    "email": "teste@smartcam.com",
+    "senha": "123456"
+  },
+  {
+    "id": 2,
+    "nome": "Felipe Cardozo",
+    "email": "felipe@smartcam.com",
+    "senha": "smartcam"
+  }
+]

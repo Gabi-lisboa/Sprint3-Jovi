@@ -1,23 +1,19 @@
 import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
-
-const usuarioTeste = {
-  nome: 'Usuário Teste',
-  email: 'teste@smartcam.com',
-  senha: '123456',
-}
+import { buscarUsuarios } from '../services/api'
 
 export default function Login() {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [erro, setErro] = useState('')
+  const [carregando, setCarregando] = useState(false)
   const navigate = useNavigate()
 
   if (localStorage.getItem('usuarioLogado')) {
     return <Navigate to="/painel" replace />
   }
 
-  function entrar(evento) {
+  async function entrar(evento) {
     evento.preventDefault()
 
     if (email === '' || senha === '') {
@@ -35,13 +31,25 @@ export default function Login() {
       return
     }
 
-    if (email !== usuarioTeste.email || senha !== usuarioTeste.senha) {
-      setErro('E-mail ou senha incorretos.')
-      return
-    }
+    setErro('')
+    setCarregando(true)
 
-    localStorage.setItem('usuarioLogado', JSON.stringify({ nome: usuarioTeste.nome, email: usuarioTeste.email }))
-    navigate('/painel')
+    try {
+      const usuarios = await buscarUsuarios()
+      const usuario = usuarios.find((u) => u.email === email && u.senha === senha)
+
+      if (!usuario) {
+        setErro('E-mail ou senha incorretos.')
+        setCarregando(false)
+        return
+      }
+
+      localStorage.setItem('usuarioLogado', JSON.stringify({ id: usuario.id, nome: usuario.nome, email: usuario.email }))
+      navigate('/painel')
+    } catch {
+      setErro('Não foi possível conectar com o servidor. Tente novamente.')
+      setCarregando(false)
+    }
   }
 
   return (
@@ -60,7 +68,9 @@ export default function Login() {
               <input type="password" id="senha-login" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Digite sua senha" />
             </div>
             {erro && <p className="mensagem-erro" role="alert">{erro}</p>}
-            <button type="submit" className="botao botao-azul">Entrar</button>
+            <button type="submit" className="botao botao-azul" disabled={carregando}>
+              {carregando ? 'Entrando...' : 'Entrar'}
+            </button>
           </form>
         </div>
       </div>

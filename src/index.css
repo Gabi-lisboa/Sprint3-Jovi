@@ -8,6 +8,8 @@
 .mensagem-erro { color: #d93025; font-weight: 600; }
 .caixa-login { max-width: 460px; margin-inline: auto; }
 .botao-sair { background: transparent; border: none; width: 100%; }
+.titulo-foto { margin: 20px 0 4px; }
+.card-galeria .titulo-foto + p { margin-top: 0; }
 
 @media (max-width: 1023px) {
   .menu-aberto .lista-menu { display: flex; }

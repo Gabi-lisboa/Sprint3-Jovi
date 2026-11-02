@@ -46,9 +46,12 @@ npm run build
 
 ## Back-end
 
-Este projeto é uma landing page front-end e não possui back-end ou servidor de API próprio. Portanto, não há comandos adicionais para executar servidores back-end.
+A gente não tem back-end próprio, então usamos uma API mockada e uma API pública. Não precisa rodar nada além do `npm run dev`.
 
-O formulário de contato possui validação no navegador e demonstra o envio da mensagem na interface, sem persistência em banco de dados.
+- API mockada: os arquivos JSON da pasta `public/api`. O `usuarios.json` é usado no login e o `fotos.json` mostra as fotos no painel.
+- API pública: o [JSONPlaceholder](https://jsonplaceholder.typicode.com/), que recebe o POST do formulário de contato.
+
+As chamadas ficam todas no `src/services/api.js`. Se a API não responder, a tela mostra uma mensagem de erro.
 
 ## Uso de inteligência artificial no desenvolvimento
 
@@ -64,6 +67,8 @@ Pra testar o login:
 
 - E-mail: teste@smartcam.com
 - Senha: 123456
+
+Também dá pra entrar com felipe@smartcam.com e a senha smartcam.
 
 O que testamos:
 
